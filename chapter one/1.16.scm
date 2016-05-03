@@ -14,7 +14,12 @@
                         (* product b)))))
 
 (define (even? n)
-	(= (remainder n 2) 0))
+	(= (rem n 2) 0))
 
-(define (remainder a b)
-	(/ a b))
+(define (rem a b)
+    (if (< a b)
+        a
+  	    (rem (- a b) b)))
+
+(define (square a)
+	(* a a))
