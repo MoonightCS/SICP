@@ -7,13 +7,15 @@
           (else (mult-iter a (- counter 1) (+ sum a)))))
 
  (define (even? n)
-	(= (remainder n 2) 0))
-
-(define (remainder a b)
-	(/ a b))
+	(= (rem n 2) 0))
 
 (define (double x)
     (+ x x))
 
  (define (halve x)
     (/ x 2))
+
+(define (rem a b)
+  (if (< a b)
+      a
+	    (rem (- a b) b)))
